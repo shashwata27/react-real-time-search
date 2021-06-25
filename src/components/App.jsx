@@ -1,6 +1,8 @@
 import React from "react";
 import JSONDATA from "../MOCK_DATA.json";
 import "../css/App.css";
+import resultFilterer from "../utils/resultFilterer";
+import dateFilterer from "../utils/dateFilterer";
 
 export default class App extends React.Component {
   state = { search: "", dob: "" };
@@ -31,28 +33,17 @@ export default class App extends React.Component {
 
         <div className="result">
           {JSONDATA.filter((data) => {
-            if (this.state.search === "") {
-              return data;
-            } else if (
-              data.first_name
-                .toLocaleLowerCase()
-                .includes(this.state.search.toLocaleLowerCase()) ||
-              data.last_name
-                .toLocaleLowerCase()
-                .includes(this.state.search.toLocaleLowerCase()) ||
-              data.first_name
-                .concat(" ", data.last_name)
-                .toLocaleLowerCase()
-                .includes(this.state.search.toLocaleLowerCase())
-            ) {
-              return data;
-            }
-          }).map((val) => (
-            <li key={val.id} style={{ listStyleType: "none" }}>
-              <div>{`${val.first_name} ${val.last_name}`}</div>
-              <div>{`${val.phone}`}</div>
-            </li>
-          ))}
+            return resultFilterer(data, this.state.search);
+          })
+            .filter((data) => {
+              return dateFilterer(data, this.state.dob);
+            })
+            .map((val) => (
+              <li key={val.id} style={{ listStyleType: "none" }}>
+                <div>{`${val.first_name} ${val.last_name}`}</div>
+                <div>{`${val.phone}`}</div>
+              </li>
+            ))}
         </div>
       </div>
     );
