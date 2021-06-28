@@ -72,3 +72,10 @@
 .ResPh {
   font-size: xx-large;
 }
+
+img {
+  margin-top: 2px;
+  width: 17px;
+  height: 17px;
+  filter: invert(100%);
+}

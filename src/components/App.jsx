@@ -3,6 +3,7 @@ import JSONDATA from "../MOCK_DATA.json";
 import "../css/App.css";
 import resultFilterer from "../utils/resultFilterer";
 import dateFilterer from "../utils/dateFilterer";
+import locationSvg from "../icons/placeholder.svg";
 
 export default class App extends React.Component {
   state = { search: "", dob: "" };
@@ -44,7 +45,10 @@ export default class App extends React.Component {
               <div className="li" key={val.id}>
                 <div className="ResDet">
                   <div className="ResName">{`${val.first_name} ${val.last_name}`}</div>
-                  <div className="ResInfo">{`${val.city} ${val.dob}`}</div>
+                  <div className="ResInfo">
+                    <img src={locationSvg} />
+                    {`${val.city} ${val.dob}`}
+                  </div>
                 </div>
                 <div className="ResPh">{`${val.phone} `}</div>
               </div>
