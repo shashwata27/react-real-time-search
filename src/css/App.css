@@ -3,5 +3,72 @@
   justify-content: flex-start;
   flex-direction: column;
   align-items: center;
-  margin: 10px;
+  margin: -10px;
+  padding: 10px;
+  background-color: rgb(34, 34, 34);
+  color: white;
+}
+.search,
+.result {
+  margin-bottom: 3px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  text-align: center;
+}
+
+#text {
+  width: 100vh;
+  height: 5vh;
+  margin-bottom: 5px;
+  text-align: center;
+  font-size: x-large;
+  font-weight: 50;
+}
+
+#date {
+  width: 30vh;
+  height: 4vh;
+}
+
+#text,
+#date {
+  border-radius: 15px 50px 30px;
+  border: 2px solid #609;
+  outline-width: 0;
+}
+
+.result .li {
+  width: 100vh;
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 2px;
+  align-items: center;
+  /* border: 1px solid gray; */
+  padding: 2px;
+  border-radius: 10px;
+}
+
+#text:hover,
+#date:hover,
+.result .li:hover {
+  box-shadow: 0 0 10px rgb(109, 109, 255);
+  border-radius: 15px 50px 30px;
+  border: 2px solid #609;
+}
+
+.result .li:hover {
+  zoom: 110%;
+}
+
+.ResName {
+  font-size: x-large;
+}
+.ResInfo {
+  font-size: medium;
+  color: rgb(105, 105, 105);
+}
+.ResPh {
+  font-size: xx-large;
 }

@@ -9,11 +9,12 @@ export default class App extends React.Component {
   render() {
     return (
       <div className="App">
-        <div className="Search">
+        <div className="search">
           <input
             type="text"
             name="search"
-            placeholder="Search..."
+            placeholder="Search"
+            id="text"
             onChange={(e) =>
               this.setState({
                 search: e.target.value,
@@ -23,6 +24,7 @@ export default class App extends React.Component {
           <input
             type="date"
             name="dob"
+            id="date"
             onChange={(e) =>
               this.setState({
                 dob: e.target.value,
@@ -39,10 +41,13 @@ export default class App extends React.Component {
               return dateFilterer(data, this.state.dob);
             })
             .map((val) => (
-              <li key={val.id} style={{ listStyleType: "none" }}>
-                <div>{`${val.first_name} ${val.last_name}`}</div>
-                <div>{`${val.phone}`}</div>
-              </li>
+              <div className="li" key={val.id}>
+                <div className="ResDet">
+                  <div className="ResName">{`${val.first_name} ${val.last_name}`}</div>
+                  <div className="ResInfo">{`${val.city} ${val.dob}`}</div>
+                </div>
+                <div className="ResPh">{`${val.phone} `}</div>
+              </div>
             ))}
         </div>
       </div>
