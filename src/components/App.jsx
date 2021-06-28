@@ -46,7 +46,7 @@ export default class App extends React.Component {
                 <div className="ResDet">
                   <div className="ResName">{`${val.first_name} ${val.last_name}`}</div>
                   <div className="ResInfo">
-                    <img src={locationSvg} />
+                    <img src={locationSvg} alt="location svg" />
                     {`${val.city} ${val.dob}`}
                   </div>
                 </div>
