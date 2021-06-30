@@ -1,6 +1,6 @@
 # Real Time Search Using React
 
-_Search People by their Name, Phone number, Email or Location._
+_Search People by their Name, Phone number, Email, DOB or Location._
 
 ## Components
 
