@@ -1,5 +1,6 @@
 const resultFilterer = (data, search) => {
   let reg = new RegExp(search.toLocaleLowerCase(), "g");
+  //g= global flag
   if (search === "") {
     return data;
   } else if (Number(search)) {
@@ -7,6 +8,7 @@ const resultFilterer = (data, search) => {
       return data;
     }
   } else if (/@/.test(search)) {
+    //literal RegExp
     if (reg.test(data.email.toLocaleLowerCase())) {
       return data;
     }
