@@ -1,22 +1,20 @@
 const resultFilterer = (data, search) => {
+  let reg = new RegExp(search.toLocaleLowerCase(), "g");
   if (search === "") {
     return data;
   } else if (Number(search)) {
-    if (data.phone.includes(search)) {
+    if (reg.test(data.phone)) {
       return data;
     }
-  } else if (search.includes("@")) {
-    if (data.email.toLocaleLowerCase().includes(search.toLocaleLowerCase())) {
+  } else if (/@/.test(search)) {
+    if (reg.test(data.email.toLocaleLowerCase())) {
       return data;
     }
   } else if (
-    data.city.toLocaleLowerCase().includes(search.toLocaleLowerCase()) ||
-    data.first_name.toLocaleLowerCase().includes(search.toLocaleLowerCase()) ||
-    data.last_name.toLocaleLowerCase().includes(search.toLocaleLowerCase()) ||
-    data.first_name
-      .concat(" ", data.last_name)
-      .toLocaleLowerCase()
-      .includes(search.toLocaleLowerCase())
+    reg.test(data.city.toLocaleLowerCase()) ||
+    reg.test(data.first_name.toLocaleLowerCase()) ||
+    reg.test(data.last_name.toLocaleLowerCase()) ||
+    reg.test(data.first_name.concat(" ", data.last_name).toLocaleLowerCase())
   ) {
     return data;
   }

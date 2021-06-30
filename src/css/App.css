@@ -60,7 +60,21 @@
 
 .result .li:hover {
   zoom: 110%;
+  background-color: whitesmoke;
+  color: rgb(70, 70, 253);
+  /* animation: hoverElem 1s ease-in-out; */
 }
+/* @keyframes hoverElem {
+  0% {
+    transform: scale(1.1);
+  }
+  25% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1.1);
+  }
+} */
 
 .ResName {
   font-size: x-large;
@@ -77,5 +91,5 @@ img {
   margin-top: 2px;
   width: 17px;
   height: 17px;
-  filter: invert(100%);
+  filter: invert(70%);
 }
