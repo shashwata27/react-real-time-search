@@ -15,6 +15,7 @@ export default class App extends React.Component {
     this.setState({ search: e.target.value });
   };
 
+  // returns filtered data for creating list of components
   filterer = () => {
     return JSONDATA.filter((data) => {
       return resultFilterer(data, this.state.search);
